@@ -14,7 +14,7 @@ void addEdge(vector<vector <ipair>> &adj, int u, int v, int wt)
 } 
 
 // Prints shortest paths from src to all other vertices 
-void primMST(vector<vector<ipair >> &adj, int V) 
+void primMST(vector<vector<ipair >> &adj, vector<int> &parent ,int V) 
 { 
 	// Create a priority queue to store vertices that 
 	// are being preinMST. This is weird syntax in C++. 
@@ -30,7 +30,7 @@ void primMST(vector<vector<ipair >> &adj, int V)
 	vector<int> key(V, INF); 
 
 	// To store parent array which in turn store MST 
-	vector<int> parent(V, -1); 
+	 
 
 	// To keep track of vertices included in MST 
 	vector<bool> inMST(V, false); 
@@ -78,7 +78,10 @@ void primMST(vector<vector<ipair >> &adj, int V)
 			} 
 		} 
 	} 
+}
 
+void printMST(vector<int> parent,int V)
+{
 	// Print edges of MST using parent array 
 	for (int i = 1; i < V; ++i) 
 		printf("%d - %d\n", parent[i], i); 
@@ -89,6 +92,7 @@ int main()
 { 
 	int V = 9; 
 	vector<vector<ipair >> adj(V); 
+	vector<int> parent(V, -1);
 
 	// making above shown graph 
 	addEdge(adj, 0, 1, 4); 
@@ -119,7 +123,8 @@ for(int i=0;i<V;i++)
 */
 	        
 
-	primMST(adj, V); 
+	primMST(adj,parent, V);
+	printMST(parent,V);
 
 	return 0; 
 } 
