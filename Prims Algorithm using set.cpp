@@ -7,8 +7,7 @@ using namespace std;
 typedef pair<int, int> ipair; 
 
 // To add an edge 
-void addEdge(vector<vector <ipair>> &adj, int u, 
-									int v, int wt) 
+void addEdge(vector<vector <ipair>> &adj, int u, int v, int wt) 
 { 
 	adj[u].push_back(make_pair(v, wt)); 
 	adj[v].push_back(make_pair(u, wt)); 
