@@ -16,10 +16,9 @@ void addEdge(vector<vector <ipair>> &adj, int u, int v, int wt)
 // Prints shortest paths from src to all other vertices 
 void primMST(vector<vector<ipair >> &adj, vector<int> &parent ,int V) 
 { 
-	// Create a priority queue to store vertices that 
-	// are being preinMST. This is weird syntax in C++. 
-	// Refer below link for details of this syntax 
-	// http://geeksquiz.com/implement-min-heap-using-stl/ 
+	// Create a Set to store vertices that 
+	// are being preinMST. 
+	
 	set< pair<int, int> > setds; 
   
 
@@ -35,16 +34,16 @@ void primMST(vector<vector<ipair >> &adj, vector<int> &parent ,int V)
 	// To keep track of vertices included in MST 
 	vector<bool> inMST(V, false); 
 
-	// Insert source itself in priority queue and initialize 
+	// Insert source itself in Set and initialize 
 	// its key as 0. 
 	setds.insert(make_pair(0, src)); 
 	key[src] = 0; 
 
-	/* Looping till priority queue becomes empty */
+	/* Looping till Set becomes empty */
 	while (!setds.empty()) 
 	{ 
 		// The first vertex in pair is the minimum key 
-		// vertex, extract it from priority queue. 
+		// vertex, extract it from Set. 
 		// vertex label is stored in second of pair (it 
 		// has to be done this way to keep the vertices 
 		// sorted key (key must be first item 
