@@ -13,8 +13,6 @@ void addEdge(vector< pair<int, iPair> > &edges,int u, int v, int w)
 		edges.push_back({w, {u, v}}); 
 } 
 
-
-
 // Find the parent of a node 'u' 
 // Path Compression 
 int find(int u,vector<int> &parent) 
