@@ -2,6 +2,7 @@
 #include<stdio.h>
 #include<time.h>
 
+
 int fib(int n)
 {
 int f[n+1];
