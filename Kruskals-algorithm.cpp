@@ -29,8 +29,7 @@ int find(int u,vector<int> &parent)
 	// Union by rank 
 void merge(int x, int y,vector<int> &rnk,vector<int> &parent) 
 { 
-		//x = find(x), y = find(y); 
-
+		
 		/* Make tree with smaller height 
 		a subtree of the other tree */
 		if (rnk[x] > rnk[y]) 
