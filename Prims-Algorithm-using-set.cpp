@@ -86,14 +86,14 @@ void printMST(vector<int> parent,int V)
 		printf("%d - %d\n", parent[i], i); 
 } 
 
-// Driver program to test methods of graph class 
+ 
 int main() 
 { 
 	int V = 9; 
 	vector<vector<ipair >> adj(V); 
 	vector<int> parent(V, -1);
 
-	// making above shown graph 
+	 
 	addEdge(adj, 0, 1, 4); 
 	addEdge(adj, 0, 7, 8); 
 	addEdge(adj, 1, 2, 8); 
