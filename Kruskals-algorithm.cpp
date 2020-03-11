@@ -86,7 +86,7 @@ int kruskalMST(vector< pair<int, iPair> > &edges,int V,int E)
 	return mst_wt; 
 } 
 
-// Driver program to test above functions 
+ 
 int main() 
 { 
 	/* Let us create above shown weighted 
