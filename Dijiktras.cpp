@@ -78,7 +78,7 @@ void printShortesPaths(vector<int> dist,int V)
  
 int main() 
 { 
-	// create the graph given in above fugure 
+	 
 	int V = 9; 
 	vector<vector<ipair >> adj(V);
 	
@@ -86,7 +86,7 @@ int main()
 	// distances as infinite (INF) 
 	vector<int> dist(V,INF);
 
-	// making above shown graph 
+
 	addEdge(adj,0, 1, 4); 
 	addEdge(adj,0, 7, 8); 
 	addEdge(adj,1, 2, 8); 
