@@ -1,61 +1,37 @@
-1. int stoi(string)
--  long stol(string)
--  long long stoll(string) 
-
-if stoi goes out of range
-
-2.a stringstream(default space separated)
-#include <bits/stdc++.h> 
+// A Dynamic Programming based solution for 0-1 Knapsack problem 
+#include<bits/stdc++.h> 
 using namespace std; 
+
   
-int countWords(string str) 
+// Returns the maximum value that can be put in a knapsack of capacity W 
+int knapSack(int W, int wt[], int val[], int n) 
 { 
-    // breaking input into word using string stream 
-    stringstream s(str); // Used for breaking words 
-    string word; // to store individual words 
+   int i, w; 
+   int K[n+1][W+1]; 
   
-    int count = 0; 
-    while (s >> word) 
-        count++; 
-    return count; 
+   // Build table K[][] in bottom up manner 
+   for (i = 0; i <= n; i++) 
+   { 
+       for (w = 0; w <= W; w++) 
+       { 
+           if (i==0 || w==0) 
+               K[i][w] = 0; 
+           else if (wt[i-1] <= w) 
+                 K[i][w] = max(val[i-1] + K[i-1][w-wt[i-1]],  K[i-1][w]); 
+           else
+                 K[i][w] = K[i-1][w]; 
+       } 
+   } 
+  
+   return K[n][W]; 
 } 
   
-// Driver code 
 int main() 
 { 
-    string s = "geeks for geeks geeks "
-               "contribution placements"; 
-    cout << " Number of words are: " << countWords(s); 
-    return 0; 
-} 
-
-2.b stringstream(any delimiter separated)
-
-#include <bits/stdc++.h> 
-using namespace std; 
-  
-int countWords(string str) 
-{ 
-    // breaking input into word using string stream 
-    stringstream s(str); // Used for breaking words 
-    string word; // to store individual words 
-  
-    int count = 0; 
-   while( s.good() )
-{
-    string substr;
-    getline( s, substr, ',' );
-    cout<<substr<<endl;
-    count++;
-}
-    return count; 
-} 
-  
-// Driver code 
-int main() 
-{ 
-    string s = "geeks,for,geeks,geeks,"
-               "contribution,placements"; 
-    cout << " Number of words are: " << countWords(s); 
+    int val[] = {60, 100, 120}; 
+    int wt[] = {10, 20, 30}; 
+    int  W = 50; 
+    int n = sizeof(val)/sizeof(val[0]); 
+    printf("%d", knapSack(W, wt, val, n)); 
     return 0; 
 } 
