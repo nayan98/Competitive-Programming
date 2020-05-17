@@ -68,7 +68,8 @@ int main() {
    while(s6>>x2>>ch)
    cout<<x2<<endl;
    cout<<ch<<endl;
-   cout<<x2<<endl;//this extra cout is for last integer because it will get stored in x2 but eof will reach due to ch after that so loop will end.
+   cout<<x2<<endl;//this extra cout is for last integer because it will get stored in x2 but eof will reach due to ch after that 
+   //so loop will end.
    
    //output
    //1
